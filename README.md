@@ -1,6 +1,6 @@
 Awesomeness Spotify App
 =======================
-***How awesome are you***
+** - How awesome are you? **
 [Awesomeness](http://awesomenessapp.herokuapp.com/ "Home of the Awesomeness App") is a very fancy [Spotify](http://www.spotify.com "Spotify") App for determining how awesome you really are.
 
 About
