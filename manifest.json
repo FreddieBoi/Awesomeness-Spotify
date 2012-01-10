@@ -1,36 +1,33 @@
 {
-    "BundleType": "Application",
-    "BundleIdentifier": "awesomeness",
-    "BundleVersion": "0.0.1",
-    "RequiredInterface": 1,
-    "VendorIdentifier": "com.herokuapp.awesomenessapp",
-    "AppIcon": {
-        "36x18": "awesomeness.png"
+  "BundleType": "Application",
+  "BundleIdentifier": "awesomeness",
+  "BundleVersion": "0.0.1",
+  "RequiredInterface": 1,
+  "VendorIdentifier": "com.herokuapp.awesomenessapp",
+  "AppIcon": {
+    "36x18": "awesomeness.png"
+  },
+  "AppName": {
+    "en": "Awesomeness"
+  },
+  "AppDescription": {
+    "en": "How awesome are you?"
+  },
+  "SupportedLanguages": ["en"],
+  "RequiredPermissions": ["http://*.spotify.com", "http://spotify.com", "http://ws.audioscrobbler.com"],
+  "DefaultTabs": [
+    {
+      "arguments": "home",
+      "title": {
+        "en": "Home"
+      }
     },
-    "AppName": {
-        "en": "Awesomeness"
-    },
-    "AppDescription": {
-        "en": "How awesome are you?"
-    },
-    "SupportedLanguages": [
-        "en"
-    ],
-    "RequiredPermissions": [
-        "http://*.spotify.com", "http://spotify.com", "http://ws.audioscrobbler.com"
-    ],
-	"DefaultTabs": [
-		{
-			"arguments": "home",
-			"title" : {
-				"en": "Home"
-			}
-		},
-		{
-			"arguments": "calculate",
-			"title" : {
-				"en": "Calculate"
-			}
-		}
-	]
+    {
+      "arguments": "calculate",
+      "title": {
+        "en": "Calculate"
+      }
+    }
+  ],
+  "AcceptedLinkTypes": ["album", "artist", "track", "playlist"]
 }
