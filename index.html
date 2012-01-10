@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Awesomeness</title>
     <link rel="stylesheet" href="sp://import/css/api.css">
+    <link rel="stylesheet" href="sp://import/css/shared.css">
     <link rel="stylesheet" href="sp://import/css/adam.css">
     <link rel="stylesheet" href="sp://awesomeness/awesomeness.css">
     <script type="text/javascript" src="sp://awesomeness/jquery.min.js"></script>
@@ -11,7 +12,6 @@
   </head>
   <body>
     <header>
-      <!-- <img src="sp://awesomeness/nrk.png" alt="No logo? " height="36" width="36"/> -->
       <h1>Awesomeness</h1>
       <p>
         <em>- How awesome are you?</em>
@@ -29,6 +29,13 @@
       <p>
         <a href="spotify:app:awesomeness">Awesomeness</a> is a very fancy <strong>Spotify App</strong> written by <a href="http://freddiepettersson.heroku.com/">Freddie Pettersson</a>.
       </p>
+      <h3>Share</h3>
+      <p>
+        Share <a href="spotify:app:awesomeness">Awesomeness</a> with your friends.
+        <button id="share_button" class="button icon" onclick="share()">
+          <span class="share"></span>Share
+        </button>
+      </p>
     </section>
     <section id="calculate">
       <div id="result">
@@ -36,7 +43,7 @@
           You are <span id="result-percentage">100%</span> awesome!
         </p>
       </div>
-      <button onclick="goTo('spotify:app:awesomeness:home')" class="new-button">
+      <button onclick="goTo('spotify:app:awesomeness:home')" class="button">
         Back
       </button>
     </section>

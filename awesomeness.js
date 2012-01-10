@@ -85,4 +85,10 @@ $(function() {
   handleArgs();
   handleLinks();
 
+  $("#share_button").click(function(e) {
+    // Kung fu fighting URI
+    var track_uri = "spotify:track:5t0Pxx2Yy3emqcla0EsINn";
+    console.log("showSharePopup() for: " + track_uri);
+    sp.social.showSharePopup(e.pageX, e.pageY, track_uri);
+  });
 });
