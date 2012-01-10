@@ -7,6 +7,7 @@ Awesomeness Spotify App
 Installation
 ------------
 To install the [Awesomeness](http://awesomenessapp.herokuapp.com/ "Home of the Awesomeness App") Spotify App (on Windows 7):
+
 + Run the `install.bat` script.
 + Start Spotify and search for `spotify:app:awesomeness`.
 
