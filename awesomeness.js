@@ -22,16 +22,25 @@ function handleArgs() {
   // Show current section
   $("#" + args[0]).show();
 
-  // If there are multiple arguments, handle them accordingly
-  if(args[1]) {
-    switch(args[0]) {
-      case "home":
-        // Do something?
-        break;
-      case "calculate":
-        // Do something?
-        break;
-    }
+  switch(args[0]) {
+    case "home":
+      $("#share_button").click(function(e) {
+        // Kung fu fighting URI
+        var track_uri = "spotify:track:5t0Pxx2Yy3emqcla0EsINn";
+        console.log("showSharePopup() for: " + track_uri);
+        sp.social.showSharePopup(e.pageX, e.pageY, track_uri);
+      });
+      if(args[1]) {
+        // If there are multiple arguments, handle them accordingly
+      }
+      break;
+    case "calculate":
+      $("#result").hide();
+      $("#result").fadeToggle('slow');
+      if(args[1]) {
+        // If there are multiple arguments, handle them accordingly
+      }
+      break;
   }
 }
 
@@ -84,11 +93,4 @@ $(function() {
   // Run on application load
   handleArgs();
   handleLinks();
-
-  $("#share_button").click(function(e) {
-    // Kung fu fighting URI
-    var track_uri = "spotify:track:5t0Pxx2Yy3emqcla0EsINn";
-    console.log("showSharePopup() for: " + track_uri);
-    sp.social.showSharePopup(e.pageX, e.pageY, track_uri);
-  });
 });
