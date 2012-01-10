@@ -2,7 +2,11 @@ Awesomeness Spotify App
 =======================
 `` - How awesome are you? ``
 
- [Awesomeness](http://awesomenessapp.herokuapp.com/ "Home of the Awesomeness App") is a very fancy [Spotify](http://www.spotify.com "Spotify") App for determining how awesome you really are.
+[Awesomeness](http://awesomenessapp.herokuapp.com/ "Home of the Awesomeness App") is a very fancy [Spotify](http://www.spotify.com "Spotify") App for determining how awesome you really are.
+
+Installation
+------------
+To install the [Awesomeness](http://awesomenessapp.herokuapp.com/ "Home of the Awesomeness App") Spotify App (on Windows 7), just run the `install.bat` script. Then start Spotify and search for `spotify:app:awesomeness`.
 
 About
 -----
