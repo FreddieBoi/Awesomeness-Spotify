@@ -15,28 +15,30 @@ sp.core.addEventListener("argumentsChanged", handleArgs);
 function handleArgs() {
   // Get all the arguments
   var args = sp.core.getArguments();
-
+  
+  // Already visible?
+  var tab = $("#" + args[0]);
+  if (tab.is(':visible')) {
+    return;
+  }
+  
   // Hide all sections
   $("section").hide();
-
+  
   // Show current section
-  $("#" + args[0]).show();
+  tab.show();
 
   switch(args[0]) {
     case "home":
-      $("#share_button").click(function(e) {
-        // Kung fu fighting URI
-        var track_uri = "spotify:track:5t0Pxx2Yy3emqcla0EsINn";
-        console.log("showSharePopup() for: " + track_uri);
-        sp.social.showSharePopup(e.pageX, e.pageY, track_uri);
+      $("#result").hide();
+      $("#calculate").click(function() {
+        calculate();
       });
       if(args[1]) {
         // If there are multiple arguments, handle them accordingly
       }
       break;
-    case "calculate":
-      $("#result").hide();
-      $("#result").fadeToggle('slow');
+    case "about":
       if(args[1]) {
         // If there are multiple arguments, handle them accordingly
       }
@@ -65,32 +67,27 @@ function goTo(location) {
 }
 
 function calculate() {
-  username = $("#username").text();
-  tasteometer(username);
-}
-
-function tasteometer(username) {
-  var req = new XMLHttpRequest();
-  req.open("GET", "http://ws.audioscrobbler.com/2.0/?method=tasteometer.compare&type1=user&type2=user&value1=freddieboi&value2=" + username + "&api_key=ed8931c29ddfce1edb3414bf5866e99c", true);
-
-  req.onreadystatechange = function() {
-
-    console.log(req.status);
-
-    if(req.readyState == 4) {
-      if(req.status == 200) {
-        console.log("Search complete!");
-        console.log(req.responseText);
+  $("#message").text("Calculating...");
+  $("#result").hide();
+  var username = $("#username").val();
+  var query = "http://ws.audioscrobbler.com/2.0/?method=tasteometer.compare&format=json&type1=user&type2=user&value1=freddieboi&value2=" + username + "&api_key=ed8931c29ddfce1edb3414bf5866e99c"
+  $.get(query)
+    .done(function(data) {
+      if (data.error) {
+        $("#message").text("Failed to get awesomeness ("+data.error+": "+data.message+")");
       }
-    }
-  };
-
-  req.send();
+      var percentage = data.comparison.result.score*100;
+      $("#result_percentage").text(percentage.toFixed(0)+"%");
+      $("#message").text("Done");
+      $("#result").fadeIn("slow");
+    })
+    .fail(function (data) {
+      $("#message").text("Failed to get awesomeness ("+data.status+": "+data.responseText+")");
+    });
 }
 
 $(function() {
 
   // Run on application load
   handleArgs();
-  handleLinks();
 });

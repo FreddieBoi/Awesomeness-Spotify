@@ -13,39 +13,28 @@
   <body>
     <header>
       <h1>Awesomeness</h1>
-      <p>
-        <em>- How awesome are you?</em>
-      </p>
     </header>
     <section id="home">
-      <h2>Welcome to the <a href="spotify:app:awesomeness">Awesomeness</a> Spotify App!</h2>
-      <p>
-        Find out how awesome you are right now! DO IT! Go, go, go! Faster! Almost there...
-        <button onclick="goTo('spotify:app:awesomeness:calculate')" class="new-button">
+      <div id="calculator">
+        <h3>Calculate your awesomeness now!</h3>
+        <p>Enter your <strong>Last.fm</strong> username below.</p>
+        <input id="username" class="new-input" />
+        <button id="calculate" class="new-button">
           Calculate
         </button>
-      </p>
-      <h3>About</h3>
-      <p>
-        <a href="spotify:app:awesomeness">Awesomeness</a> is a very fancy <strong>Spotify App</strong> written by <a href="http://freddiepettersson.heroku.com/">Freddie Pettersson</a>.
-      </p>
-      <h3>Share</h3>
-      <p>
-        Share <a href="spotify:app:awesomeness">Awesomeness</a> with your friends.
-        <button id="share_button" class="button icon" onclick="share()">
-          <span class="share"></span>Share
-        </button>
-      </p>
-    </section>
-    <section id="calculate">
+        <p id="message"></p>
+      </div>
       <div id="result">
         <p>
-          You are <span id="result_percentage">100%</span> awesome!
+          You are <span id="result_percentage">???%</span> awesome!
         </p>
       </div>
-      <button onclick="goTo('spotify:app:awesomeness:home')" class="button">
-        Back
-      </button>
+    </section>
+    <section id="about">
+      <h3>About</h3>
+      <p>
+        <a href="spotify:app:awesomeness">Awesomeness</a> is a very fancy <strong>Spotify App</strong> written by <a href="http://freddiepettersson.heroku.com/">Freddie Pettersson</a>. Calculate your awesomeness based on your musical compatibility with the author.
+      </p>
     </section>
     <footer>
       <a href="http://awesomenessapp.herokuapp.com/">Awesomeness</a> &copy; 2012 <a href="http://freddiepettersson.heroku.com/">Freddie Pettersson</a>.
